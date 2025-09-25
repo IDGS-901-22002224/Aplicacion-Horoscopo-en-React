@@ -1,0 +1,155 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e1f, #1a2a44, #2e4066);
+  color: #e0e6f0;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif; 
+}
+
+.app-header {
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+.app-header .display-4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); 
+  color: #ffd700; 
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.col-md-6 {
+  width: 100%;
+}
+
+.form-card {
+  background: rgba(26, 32, 44, 0.9);
+  border: 1px solid rgba(127, 162, 236, 0.5);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group.name-field,
+.form-group.button-field {
+  width: 100%;
+}
+
+.form-card .form-label {
+  color: #b0c4de;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control {
+  background-color: #0f172a;
+  color: #e0e6f0;
+  border-color: #3b506c;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.form-control::placeholder {
+  color: #6c7a9a;
+}
+
+.btn-primary {
+  background-color: #6a0dad; 
+  border-color: #6a0dad;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #8a2be2; 
+  border-color: #8a2be2;
+}
+
+.col-md-6:last-child {
+  width: 100%;
+}
+
+.result-card {
+  background: rgba(26, 32, 44, 0.9);
+  border: 1px solid rgba(127, 162, 236, 0.5);
+  border-radius: 0.75rem;
+  padding: 7rem;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-card .text-muted {
+  color: #6c7a9a;
+  font-size: 1.1rem;
+}
+
+.result-content {
+  width: 100%;
+}
+
+.sign-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.sign-image {
+  width: 150px; 
+  height: 150px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #3b506c;
+  padding: 0.25rem;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+}
+
+.result-description {
+  color: #e0e6f0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.result-description strong {
+  color: #ffd700;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .form-card,
+  .result-card {
+    padding: 1rem;
+  }
+}
