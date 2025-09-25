@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 
 function App() {
@@ -6,6 +6,8 @@ function App() {
   const [birthDate, setBirthDate] = useState('');
   const [sign, setSign] = useState('');
   const [description, setDescription] = useState('');
+  const nameInputRef = useRef(null); 
+  const dateInputRef = useRef(null); 
 
   const getZodiacSign = (day, month) => {
     if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return 'Aries';
@@ -74,6 +76,16 @@ function App() {
     setDescription(signDescriptions[calculatedSign]);
   };
 
+  const handleNameInputClick = (e) => {
+    e.stopPropagation(); 
+    nameInputRef.current.focus();
+  };
+
+  const handleDateInputClick = (e) => {
+    e.stopPropagation(); 
+    dateInputRef.current.focus();
+  };
+
   return (
     <div className="app-container">
       <div className="container">
@@ -88,14 +100,19 @@ function App() {
           <div className="col-md-6">
             <div className="form-card">
               <div className="form-row">
-                <div className="form-group">
+                <div className="form-group name-field">
                   <label className="form-label">Nombre:</label>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    onClick={handleNameInputClick}
                     className="form-control"
                     placeholder="Ingresa tu nombre"
+                    tabIndex="1"
+                    autoComplete="off"
+                    ref={nameInputRef}
+                    autoFocus 
                   />
                 </div>
                 <div className="form-group">
@@ -104,13 +121,17 @@ function App() {
                     type="date"
                     value={birthDate}
                     onChange={(e) => setBirthDate(e.target.value)}
+                    onClick={handleDateInputClick}
                     className="form-control"
+                    tabIndex="2"
+                    ref={dateInputRef}
                   />
                 </div>
-                <div className="form-group">
+                <div className="form-group button-field">
                   <button
                     onClick={handleCalculate}
                     className="btn btn-primary w-100"
+                    tabIndex="3"
                   >
                     Calcular Signo
                   </button>
